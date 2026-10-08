@@ -1,0 +1,20 @@
+{
+  "listen_addr": "0.0.0.0:8097",
+  "public_url": "http://lanshare.example.com:8097",
+  "account_prefix": "lanshare-",
+  "smb_server": "fileserver.example.com",
+  "samba_config": "/etc/samba/smb.conf",
+  "managed_share_file": "/etc/samba/lanshare-admin-shares.conf",
+  "allowed_roots": ["/mnt", "/srv"],
+  "shares": [
+    {
+      "id": "photos",
+      "name": "Photos",
+      "group": "photo-share",
+      "unc": "\\\\fileserver.example.com\\Photos",
+      "path": "/srv/photos",
+      "read_only": false,
+      "managed": false
+    }
+  ]
+}

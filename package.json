@@ -1,0 +1,11 @@
+{
+  "name": "lanshare-admin-ui",
+  "private": true,
+  "scripts": {
+    "css": "tailwindcss -i ./web/input.css -o ./web/output.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

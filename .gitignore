@@ -1,0 +1,19 @@
+# Build artifacts and dependencies
+/dist/
+/node_modules/
+
+# Local configuration and runtime data
+/config.json
+*.db
+*.db-shm
+*.db-wal
+*.log
+.env
+.env.*
+!.env.example
+
+# Editors, operating systems, and local automation
+/.idea/
+/.ralph/
+/.vscode/
+.DS_Store

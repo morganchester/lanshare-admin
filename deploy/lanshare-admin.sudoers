@@ -1,0 +1,8 @@
+Defaults:lanshare-admin !requiretty
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper list
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper add *
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper set-shares *
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper revoke *
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper browse *
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper add-share *
+lanshare-admin ALL=(root) NOPASSWD: /opt/lanshare-admin/lanshare-helper remove-share *

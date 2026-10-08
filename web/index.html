@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>LanShare Admin</title>
+  <link rel="stylesheet" href="/output.css">
+  <script src="/app.js" defer></script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-[#d7dfb9] opacity-70 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-32 h-[30rem] w-[30rem] rounded-full bg-[#edbba5] opacity-50 blur-3xl"></div>
+  </div>
+
+  <div id="authView" class="relative mx-auto hidden min-h-screen max-w-md items-center px-5 py-10"></div>
+
+  <div id="appShell" class="relative mx-auto hidden min-h-screen max-w-7xl gap-6 px-4 py-4 md:grid md:grid-cols-[230px_1fr] md:px-6 md:py-6">
+    <aside class="panel mb-4 flex items-center justify-between p-4 md:sticky md:top-6 md:mb-0 md:h-[calc(100vh-3rem)] md:flex-col md:items-stretch md:p-5">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-moss text-lg text-white">⌁</div>
+          <div><strong class="block leading-tight">LanShare</strong><span data-i18n="app.local" class="text-xs text-black/40"></span></div>
+        </div>
+        <nav class="mt-0 hidden space-y-1 md:mt-8 md:block" data-i18n-aria="nav.main">
+          <a href="/" data-route class="nav-link"><span>◫</span><span data-i18n="nav.dashboard"></span></a>
+          <a href="/users" data-route class="nav-link"><span>◎</span><span data-i18n="nav.users"></span></a>
+          <a href="/shares" data-route class="nav-link"><span>▱</span><span data-i18n="nav.shares"></span></a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-2 md:block md:space-y-3">
+        <select id="languageSelect" class="rounded-xl border border-black/10 bg-white px-2.5 py-2 text-xs font-semibold"></select>
+        <button id="logoutButton" class="btn-secondary md:w-full" type="button"><span data-i18n="nav.logout"></span></button>
+      </div>
+    </aside>
+
+    <div>
+      <nav class="panel mb-4 flex gap-1 overflow-x-auto p-2 md:hidden">
+        <a href="/" data-route class="nav-link"><span data-i18n="nav.dashboard"></span></a>
+        <a href="/users" data-route class="nav-link"><span data-i18n="nav.users"></span></a>
+        <a href="/shares" data-route class="nav-link"><span data-i18n="nav.shares"></span></a>
+      </nav>
+      <main id="page" class="space-y-6"></main>
+    </div>
+  </div>
+
+  <div id="modal" class="fixed inset-0 z-20 hidden items-end justify-center bg-black/35 p-0 backdrop-blur-sm sm:items-center sm:p-5" role="dialog" aria-modal="true">
+    <div class="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-3xl bg-paper p-6 shadow-2xl sm:rounded-3xl sm:p-8">
+      <div class="mb-6 flex items-start justify-between gap-4">
+        <div><h2 id="modalTitle" class="text-2xl font-semibold"></h2><p id="modalSubtitle" class="mt-1 text-sm text-black/50"></p></div>
+        <button id="closeModal" class="rounded-lg p-2 text-xl text-black/45 hover:bg-black/5" type="button" data-i18n-aria="common.close">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-5 left-1/2 z-30 hidden -translate-x-1/2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium text-white shadow-xl" role="status"></div>
+</body>
+</html>

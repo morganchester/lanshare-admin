@@ -1,0 +1,32 @@
+[Unit]
+Description=LanShare Admin
+After=network-online.target smb.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lanshare-admin
+Group=lanshare-admin
+Environment=LANSHARE_CONFIG=/etc/lanshare-admin/config.json
+Environment=DEVICE_HELPER=/opt/lanshare-admin/lanshare-helper
+Environment=DATABASE_PATH=/var/lib/lanshare-admin/lanshare.db
+ExecStart=/opt/lanshare-admin/lanshare-admin
+Restart=on-failure
+RestartSec=3
+UMask=0077
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictRealtime=true
+RestrictNamespaces=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target
